@@ -1,3 +1,4 @@
+#!/usr/bin/env bash
 declare -n TEST_NAME = $1
 
 verify_valid_proj(){
