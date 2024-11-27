@@ -1,6 +1,6 @@
 declare -n TEST_NAME = $1
 
-verify-valid-proj(){
+verify_valid_proj(){
     $TEST_NAME = ${TEST_NAME// }
     if [ -z $TEST_NAME ]; then
         echo "No test name provided"
@@ -31,7 +31,7 @@ zip_results(){
     zip -r "${OUT_DIR}/${TEST_NAME}.zip" ./VTK
 }
 
-verify-valid-proj
+verify_valid_proj
 open_sim_dir
 run_sim
 zip_results
