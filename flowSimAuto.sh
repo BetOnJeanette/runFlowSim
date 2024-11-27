@@ -23,6 +23,15 @@ run_sim(){
     foamToVTK
 }
 
+zip_results(){
+    OUT_DIR="~/testResults"
+    if [ ! -d "$OUT_DIR" ]; then
+        mkdir "$OUT_DIR"
+    fi
+    zip -r "${OUT_DIR}/${TEST_NAME}.zip" ./VTK
+}
+
 verify-valid-proj
 open_sim_dir
 run_sim
+zip_results
