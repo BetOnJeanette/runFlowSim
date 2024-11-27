@@ -17,5 +17,12 @@ open_sim_dir(){
     cd $dir
 }
 
+run_sim(){
+    blockMesh
+    foamRun
+    foamToVTK
+}
+
 verify-valid-proj
 open_sim_dir
+run_sim
