@@ -1,5 +1,6 @@
 #!/usr/bin/env bash
 declare -n TEST_NAME = $1
+STARTING_DIR=$pwd
 
 verify_valid_proj(){
     $TEST_NAME = ${TEST_NAME// }
@@ -36,3 +37,5 @@ verify_valid_proj
 open_sim_dir
 run_sim
 zip_results
+cd $STARTING_DIR
+
