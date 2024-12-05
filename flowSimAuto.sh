@@ -22,7 +22,7 @@ open_sim_dir(){
 run_sim(){
     blockMesh
     foamRun
-    foamToVTK
+    touch "$TEST_NAME".foam
 }
 
 zip_results(){
@@ -30,7 +30,7 @@ zip_results(){
     if [ ! -d "$OUT_DIR" ]; then
         mkdir "$OUT_DIR"
     fi
-    zip -r "${OUT_DIR}/${TEST_NAME}.zip" ./VTK
+    zip -r "${OUT_DIR}/${TEST_NAME}.zip" .
 }
 
 verify_valid_proj
